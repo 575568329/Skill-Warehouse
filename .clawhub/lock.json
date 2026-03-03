@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "skills": {
+    "humanize-zh": {
+      "version": "1.0.0",
+      "installedAt": 1772070401225
+    },
+    "copywriting": {
+      "version": "0.1.0",
+      "installedAt": 1772070483903
+    },
+    "polish": {
+      "version": "1.0.0",
+      "installedAt": 1772078198643
+    },
+    "brainstorming": {
+      "version": "0.1.0",
+      "installedAt": 1772078227854
+    },
+    "creative-thought-partner": {
+      "version": "1.0.1",
+      "installedAt": 1772078290425
+    },
+    "tavily-search": {
+      "version": "1.0.0",
+      "installedAt": 1772160841797
+    },
+    "find-skills": {
+      "version": "0.1.0",
+      "installedAt": 1772166181260
+    }
+  }
+}
