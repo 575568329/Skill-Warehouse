@@ -1,0 +1,41 @@
+# 敏感信息保护 - OpenClaw workspace
+# 创建时间：2026-03-05
+
+# 环境变量和密钥
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+credentials.json
+secrets.json
+
+# 个人隐私文件
+MEMORY.md
+memory/
+
+# Git敏感文件
+.git/
+.gitignore
+
+# IDE和编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.temp
+*.log
+
+# Ngrok配置（包含公网地址）
+ngrok.yml
+
+# 飞书配置敏感部分
+.openclaw/
+.clawhub/
