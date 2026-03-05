@@ -9,13 +9,12 @@
 credentials.json
 secrets.json
 
-# 个人记忆文件
-MEMORY.md
-memory/
-
-# OpenClaw配置
+# OpenClaw配置（可能包含token等敏感信息）
 .openclaw/
 .clawhub/
+
+# 运行时状态文件（不需要版本控制）
+memory/heartbeat-state.json
 
 # IDE
 .vscode/
