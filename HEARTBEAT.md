@@ -1,5 +1,63 @@
-# HEARTBEAT.md
+# HEARTBEAT.md - 心跳检查任务
 
-# Keep this file empty (or with only comments) to skip heartbeat API calls.
+## 检查频率
+- **批量检查**：每 6 小时一次
+- **静默时段**：23:00-08:00（不执行检查）
+- **轮换策略**：每次只检查 1-2 项，避免单次token消耗过高
 
-# Add tasks below when you want the agent to check something periodically.
+## 检查项目（轮换执行）
+
+### 📧 邮件检查（未配置）
+- 暂未集成邮件服务
+- 需要时在 TOOLS.md 中配置邮箱信息
+
+### 📅 日历检查（未配置）
+- 暂未集成日历服务
+- 需要时在 TOOLS.md 中配置日历信息
+
+### 🌤️ 天气检查
+- **触发条件**：用户可能外出时（根据对话上下文判断）
+- **检查频率**：按需检查，不定期轮询
+- **操作**：调用 weather skill 获取北京天气
+
+### 📂 项目状态检查
+- **检查内容**：
+  - 小说项目（`D:\cursorObject\小说\`）是否有待办事项
+  - survival-game 项目是否有更新
+- **检查频率**：每 2 天一次
+- **记录位置**：memory/YYYY-MM-DD.md
+
+### 🔍 记忆维护
+- **任务**：回顾最近 3 天的 memory/YYYY-MM-DD.md
+- **频率**：每 3 天一次
+- **操作**：提炼有价值的信息到 MEMORY.md
+
+## 心跳状态跟踪
+
+在 `memory/heartbeat-state.json` 中记录：
+```json
+{
+  "lastChecks": {
+    "project_status": "2026-03-05T10:00:00+08:00",
+    "memory_review": null,
+    "weather": null
+  },
+  "nextCheckDue": "2026-03-05T16:00:00+08:00"
+}
+```
+
+## 响应策略
+
+**需要主动汇报**：
+- 发现重要邮件/日程（已配置时）
+- 项目有紧急待办
+- 天气变化影响出行
+
+**保持静默**：
+- 静默时段（23:00-08:00）
+- 无重要更新
+- 距离上次检查 < 4 小时
+
+---
+
+_配置更新：2026-03-05_
